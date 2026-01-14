@@ -783,6 +783,50 @@
         font-size: 1.5rem;
       }
     }
+
+#floating-video{
+  position:fixed;
+  bottom:12px;
+  right:12px;
+
+  width:85vw;          /* BIG on mobile */
+  max-width:420px;     /* limit on desktop */
+
+  z-index:9999;
+  border-radius:16px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+#floating-video video{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+#closeVideo{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:30px;
+  height:30px;
+  border:none;
+  border-radius:50%;
+  background:rgba(0,0,0,.6);
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* Desktop: even bigger */
+@media (min-width:768px){
+  #floating-video{
+    width:360px;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -813,6 +857,17 @@
       </div>
     </div>
   </section>
+
+<div id="floating-video">
+  <video id="autoVideo"
+         src="doctorvideo.mp4"
+         autoplay
+         loop
+         playsinline>
+  </video>
+
+  <button id="closeVideo">✕</button>
+</div>
 
   <!-- Stats Section -->
   <section class="stats">
@@ -1085,6 +1140,19 @@
       });
     });
   </script>
+
+<script>
+  window.addEventListener("load", () => {
+    const v = document.getElementById("autoVideo");
+    v.muted = true;
+    v.play().catch(() => {});
+  });
+
+  document.getElementById("closeVideo").onclick = () => {
+    document.getElementById("floating-video").style.display = "none";
+  };
+</script>
+
 
 </body>
 </html>
