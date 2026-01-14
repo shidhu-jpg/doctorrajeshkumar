@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>श्री हेल्थ क्लिनिक - विश्वसनीय चिकित्सा सेवा | Shree Health Clinic</title>
+  <meta name="description" content="मोतिहारी में बेहतरीन चिकित्सा सेवा। 60+ वर्ष के बुजुर्गों का मुफ्त इलाज। अनुभवी डॉक्टर, आधुनिक सुविधाएं।">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0066cc;
+      --primary-dark: #004999;
+      --secondary: #00cc88;
+      --accent: #ff6b35;
+      --text: #1a1a1a;
+      --text-light: #4a5568;
+      --bg: #ffffff;
+      --bg-light: #f8fafc;
+      --border: #e2e8f0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+      background-size: cover;
+      animation: wave 20s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      max-width: 900px;
+      padding: 2rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      animation: fadeInUp 1s ease 0.2s backwards;
+    }
+
+    .hero .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+      animation: fadeInUp 1s ease 0.4s backwards;
+    }
+
+    .hero .subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease 0.6s backwards;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease 0.8s backwards;
+    }
+
+    .btn {
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
+      transform: translate(-50%, -50%);
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #ff8c61);
+      color: white;
+      box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(255, 107, 53, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid white;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* Stats Section */
+    .stats {
+      background: linear-gradient(135deg, #0066cc, #00cc88);
+      padding: 4rem 2rem;
+      margin-top: -80px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+    }
+
+    .stat-card {
+      text-align: center;
+      color: white;
+      animation: fadeInUp 0.8s ease backwards;
+    }
+
+    .stat-card:nth-child(1) { animation-delay: 0.1s; }
+    .stat-card:nth-child(2) { animation-delay: 0.2s; }
+    .stat-card:nth-child(3) { animation-delay: 0.3s; }
+    .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    /* Special Announcement */
+    .announcement {
+      background: linear-gradient(135deg, #ff6b35, #f7931e);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .announcement::before {
+      content: '✨';
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.1;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%) rotate(-15deg);
+    }
+
+    .announcement::after {
+      content: '❤️';
+      position: absolute;
+      font-size: 8rem;
+      opacity: 0.1;
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%) rotate(15deg);
+    }
+
+    .announcement-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .announcement h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .announcement p {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.8;
+    }
+
+    .announcement .highlight {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: var(--text-light);
+    }
+
+    /* About Section */
+    .about {
+      background: var(--bg-light);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: rotate(45deg);
+      transition: all 0.6s;
+    }
+
+    .about-image:hover::before {
+      top: 150%;
+      right: 150%;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .credentials {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .credential {
+      background: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Features Section */
+    .features {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: var(--bg-light);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 5rem;
+      color: var(--primary);
+      opacity: 0.1;
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-text {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .author-info h4 {
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .author-info p {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(135deg, #0066cc, #00cc88);
+      color: white;
+      text-align: center;
+    }
+
+    .contact-info {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+
+    .contact-info h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.95;
+    }
+
+    .contact-methods {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .contact-btn {
+      padding: 1.2rem 2.5rem;
+      background: white;
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-btn.whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .contact-btn.location {
+      background: #EA4335;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: #1a202c;
+      color: white;
+      padding: 3rem 2rem 1.5rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+
+    .footer-section p, .footer-section li {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.8;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-section a:hover {
+      color: var(--secondary);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Floating Action Buttons */
+    .floating-btns {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 999;
+    }
+
+    .fab {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.8rem;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .fab:hover {
+      transform: scale(1.1) !important;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .fab.call {
+      background: linear-gradient(135deg, #0066cc, #004999);
+    }
+
+    .fab.whatsapp {
+      background: #25D366;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .tagline {
+        font-size: 1.2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .announcement h2 {
+        font-size: 1.8rem;
+      }
+
+      .announcement p {
+        font-size: 1.1rem;
+      }
+
+      .floating-btns {
+        bottom: 1rem;
+        right: 1rem;
+      }
+
+      .fab {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">श्री हेल्थ क्लिनिक</div>
+      <ul class="nav-links">
+        <li><a href="#home">होम</a></li>
+        <li><a href="#about">डॉक्टर के बारे में</a></li>
+        <li><a href="#services">सेवाएं</a></li>
+        <li><a href="#testimonials">समीक्षा</a></li>
+        <li><a href="#contact">संपर्क</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>श्री हेल्थ क्लिनिक में आपका स्वागत है</h1>
+      <p class="tagline">विश्वसनीय चिकित्सा सेवा • अनुभवी डॉक्टर • मरीज-केंद्रित उपचार</p>
+      <p class="subtitle">मोतिहारी में आपके स्वास्थ्य का विश्वसनीय साथी</p>
+      <div class="cta-buttons">
+        <a href="tel:+919999999999" class="btn btn-primary">📞 अपॉइंटमेंट के लिए कॉल करें</a>
+        <a href="#services" class="btn btn-secondary">हमारी सेवाएं देखें</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number">12+</div>
+        <div class="stat-label">वर्षों का अनुभव</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15,000+</div>
+        <div class="stat-label">मरीजों का इलाज</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">मरीज संतुष्टि</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">24×7</div>
+        <div class="stat-label">आपातकालीन सहायता</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Announcement -->
+  <section class="announcement">
+    <div class="announcement-content">
+      <h2>🎉 विशेष घोषणा 🎉</h2>
+      <p><strong>60+ वर्ष के बुजुर्गों के लिए मुफ्त इलाज!</strong></p>
+      <p>गरीब, पिछड़े और वंचित लोगों के लिए मुफ्त परामर्श</p>
+      <p>दवा और जांच में भी विशेष छूट</p>
+      <div class="highlight">शुक्रवार और रविवार को मुफ्त जांच शिविर</div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="images/doctor image 2.jpeg" alt="Dr. Raushan Mishra">
+        </div>
+        <div class="about-text">
+          <h3>डॉ. रौशन मिश्रा से मिलें</h3>
+          <p>अनुभवी • नैतिक • मरीज-केंद्रित</p>
+          <p>डॉ. रौशन मिश्रा के पास 12 से अधिक वर्षों का अनुभव है और वे सिर्फ अल्पकालिक राहत नहीं, बल्कि दीर्घकालिक स्वास्थ्य पर ध्यान केंद्रित करते हैं।</p>
+          <p>नारायणी मेडिकल सेंटर के संस्थापक और प्रबंधक के रूप में, वे गरीबों और बुजुर्गों की सेवा के लिए समर्पित हैं।</p>
+          <div class="credentials">
+            <span class="credential">MBBS</span>
+            <span class="credential">MD</span>
+            <span class="credential">12+ वर्षों का अनुभव</span>
+            <span class="credential">IMA बिहार से संबद्ध</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>हमारी चिकित्सा सेवाएं</h2>
+        <p>आधुनिक सुविधाओं के साथ व्यापक स्वास्थ्य देखभाल</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🩺</div>
+          <h3>सामान्य परामर्श</h3>
+          <p>सभी प्रकार की सामान्य बीमारियों का निदान और उपचार</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💉</div>
+          <h3>मधुमेह प्रबंधन</h3>
+          <p>डायबिटीज की निगरानी और दीर्घकालिक प्रबंधन</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">❤️</div>
+          <h3>रक्तचाप उपचार</h3>
+          <p>हाई और लो BP का प्रभावी इलाज</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌡️</div>
+          <h3>बुखार और संक्रमण देखभाल</h3>
+          <p>सभी प्रकार के बुखार और संक्रमण का उपचार</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>नियमित स्वास्थ्य जांच</h3>
+          <p>पूर्ण शरीर जांच और स्वास्थ्य निगरानी</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>निवारक स्वास्थ्य देखभाल</h3>
+          <p>रोग रोकथाम और स्वास्थ्य परामर्श</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="color: white;">मरीज हमें क्यों चुनते हैं</h2>
+        <p style="color: rgba(255,255,255,0.9);">गुणवत्तापूर्ण देखभाल के लिए हमारी प्रतिबद्धता</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <h3>सटीक निदान</h3>
+          <p>आधुनिक उपकरणों से सही जांच</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💊</div>
+          <h3>पारदर्शी उपचार</h3>
+          <p>स्पष्ट व्याख्या और ईमानदार सलाह</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌿</div>
+          <h3>न्यूनतम दवा दृष्टिकोण</h3>
+          <p>केवल आवश्यक दवाएं</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>स्वच्छ और स्वास्थ्यकर क्लिनिक</h3>
+          <p>उच्च स्तर की स्वच्छता</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👨‍⚕️</div>
+          <h3>व्यक्तिगत ध्यान</h3>
+          <p>प्रत्येक मरीज के लिए पर्याप्त समय</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3>किफायती परामर्श</h3>
+          <p>सस्ती और गुणवत्तापूर्ण सेवा</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>हमारे मरीज क्या कहते हैं</h2>
+        <p>वास्तविक समीक्षाएं, वास्तविक अनुभव</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"डॉक्टर साहब बहुत धैर्य से सुनते हैं और सब कुछ स्पष्ट रूप से समझाते हैं। उनका व्यवहार बहुत अच्छा है।"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div class="author-info">
+              <h4>रमेश कुमार</h4>
+              <p>मोतिहारी</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"इलाके में सबसे अच्छा क्लिनिक। साफ-सुथरा और पेशेवर। मैं और मेरा परिवार यहीं आते हैं।"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div class="author-info">
+              <h4>सुनीता देवी</h4>
+              <p>मोतिहारी</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"बुजुर्गों के लिए मुफ्त इलाज की सुविधा बहुत अच्छी है। डॉक्टर साहब का यह कदम सराहनीय है।"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+              <h4>अमर सिंह</h4>
+              <p>मोतिहारी</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-info">
+        <h2>हमसे संपर्क करें</h2>
+        <p>📍 छतौनी ढाका रोड, मठिया, मोतिहारी, बिहार</p>
+        <p>⏰ सोमवार – शनिवार: सुबह 9:00 – दोपहर 1:00 | शाम 5:00 – रात 9:00</p>
+        <p>📞 +91 9999999999</p>
+      </div>
+      <div class="contact-methods">
+        <a href="tel:+919999999999" class="contact-btn call">📞 कॉल करें</a>
+        <a href="https://wa.me/919999999999?text=नमस्ते%20मुझे%20अपॉइंटमेंट%20बुक%20करना%20है" class="contact-btn whatsapp">💬 WhatsApp</a>
+        <a href="https://maps.google.com/?q=Chattauni+Dhaka+Road+Mathiya+Motihari" class="contact-btn location">📍 लोकेशन देखें</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>श्री हेल्थ क्लिनिक</h3>
+        <p>नारायणी मेडिकल सेंटर</p>
+        <p>मोतिहारी में विश्वसनीय चिकित्सा सेवा</p>
+        <p>गरीबों और बुजुर्गों की सेवा के लिए समर्पित</p>
+      </div>
+      <div class="footer-section">
+        <h3>त्वरित लिंक</h3>
+        <ul>
+          <li><a href="#home">होम</a></li>
+          <li><a href="#about">डॉक्टर के बारे में</a></li>
+          <li><a href="#services">सेवाएं</a></li>
+          <li><a href="#testimonials">समीक्षा</a></li>
+          <li><a href="#contact">संपर्क</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>संपर्क जानकारी</h3>
+        <p>📍 छतौनी ढाका रोड, मठिया</p>
+        <p>मोतिहारी, बिहार</p>
+        <p>📞 +91 9999999999</p>
+        <p>📧 info@shreehealthclinic.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>समय</h3>
+        <p><strong>सोमवार – शनिवार</strong></p>
+        <p>सुबह: 9:00 AM – 1:00 PM</p>
+        <p>शाम: 5:00 PM – 9:00 PM</p>
+        <p><strong>रविवार:</strong> बंद</p>
+        <p>(आपातकालीन कॉल 24×7)</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 श्री हेल्थ क्लिनिक - नारायणी मेडिकल सेंटर। सर्वाधिकार सुरक्षित।</p>
+      <p>डॉ. रौशन मिश्रा द्वारा संचालित | IMA बिहार से संबद्ध</p>
+    </div>
+  </footer>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-btns">
+    <a href="tel:+919999999999" class="fab call" title="कॉल करें">📞</a>
+    <a href="https://wa.me/919999999999?text=नमस्ते%20मुझे%20अपॉइंटमेंट%20बुक%20करना%20है" class="fab whatsapp" title="WhatsApp">💬</a>
+  </div>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
