@@ -829,7 +829,7 @@
 
   </style>
 </head>
-<body>
+<body onclick="enableSound()">
 
   <!-- Navigation -->
   <nav id="navbar">
@@ -1058,11 +1058,11 @@
         <h2>हमसे संपर्क करें</h2>
         <p>📍 छतौनी ढाका रोड, मठिया, मोतिहारी, बिहार</p>
         <p>⏰ सोमवार – शनिवार: सुबह 9:00 – दोपहर 1:00 | शाम 5:00 – रात 9:00</p>
-        <p>📞 +91 9999999999</p>
+        <p>📞 +91 9973180451</p>
       </div>
       <div class="contact-methods">
-        <a href="tel:+919999999999" class="contact-btn call">📞 कॉल करें</a>
-        <a href="https://wa.me/919999999999?text=नमस्ते%20मुझे%20अपॉइंटमेंट%20बुक%20करना%20है" class="contact-btn whatsapp">💬 WhatsApp</a>
+        <a href="tel:+919973180451" class="contact-btn call">📞 कॉल करें</a>
+        <a href="https://wa.me/919973180451?text=नमस्ते%20मुझे%20अपॉइंटमेंट%20बुक%20करना%20है" class="contact-btn whatsapp">💬 WhatsApp</a>
         <a href="https://maps.google.com/?q=Chattauni+Dhaka+Road+Mathiya+Motihari" class="contact-btn location">📍 लोकेशन देखें</a>
       </div>
     </div>
@@ -1091,7 +1091,7 @@
         <h3>संपर्क जानकारी</h3>
         <p>📍 छतौनी ढाका रोड, मठिया</p>
         <p>मोतिहारी, बिहार</p>
-        <p>📞 +91 9999999999</p>
+        <p>📞 +91 9973180451</p>
         <p>📧 info@shreehealthclinic.com</p>
       </div>
       <div class="footer-section">
@@ -1111,9 +1111,11 @@
 
   <!-- Floating Action Buttons -->
   <div class="floating-btns">
-    <a href="tel:+919999999999" class="fab call" title="कॉल करें">📞</a>
+    <a href="tel:+919973180451" class="fab call" title="कॉल करें">📞</a>
     <a href="https://wa.me/919999999999?text=नमस्ते%20मुझे%20अपॉइंटमेंट%20बुक%20करना%20है" class="fab whatsapp" title="WhatsApp">💬</a>
   </div>
+
+
 
   <script>
     // Navbar scroll effect
@@ -1142,16 +1144,25 @@
   </script>
 
 <script>
-  window.addEventListener("load", () => {
-    const v = document.getElementById("autoVideo");
-    v.muted = true;
-    v.play().catch(() => {});
-  });
-
+function enableSound() {
+  const v = document.getElementById("autoVideo");
+  v.muted = false;
+  v.play();
+  document.body.onclick = null; // remove after first click
+}
+</script>
+<script>
   document.getElementById("closeVideo").onclick = () => {
+    const v = document.getElementById("autoVideo");
+
+    v.pause();        // stop playback
+    v.currentTime = 0; // optional: reset video
+    v.muted = true;   // ensure sound is off
+
     document.getElementById("floating-video").style.display = "none";
   };
 </script>
+
 
 
 </body>
