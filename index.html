@@ -6,6 +6,74 @@
   <title>श्री हेल्थ क्लिनिक - विश्वसनीय चिकित्सा सेवा | Shree Health Clinic</title>
   <meta name="description" content="मोतिहारी में बेहतरीन चिकित्सा सेवा। 60+ वर्ष के बुजुर्गों का मुफ्त इलाज। अनुभवी डॉक्टर, आधुनिक सुविधाएं।">
   <style>
+
+#bot-title {
+  background: #1a73e8;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+
+#bot-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+#mini-bot {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 220px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+  z-index: 9999;
+}
+
+#bot-title {
+  background: #1a73e8;
+  color: #ffffff;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#bot-content {
+  padding: 10px;
+}
+
+#bot-content button {
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 8px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  background: #e8f0fe;
+  cursor: pointer;
+}
+
+#bot-content button:hover {
+  background: #d2e3fc;
+}
+
+
+
+
+
     * {
       margin: 0;
       padding: 0;
@@ -1062,7 +1130,7 @@
       </div>
       <div class="contact-methods">
         <a href="tel:+919973180451" class="contact-btn call">📞 कॉल करें</a>
-        <a href="https://wa.me/919973180451?text=नमस्ते%20मुझे%20अपॉइंटमेंट%20बुक%20करना%20है" class="contact-btn whatsapp">💬 WhatsApp</a>
+        <a href="https://wa.me/919973180451?text=नमस्ते%2C%20मुझे%20अपॉइंटमेंट%20बुक%20करना%20है।%0A%0Aनाम%3A%0Aपसंदीदा%20तारीख%3A%0Aसमस्या%3A" class="contact-btn whatsapp">💬 WhatsApp</a>
         <a href="https://maps.google.com/?q=Chattauni+Dhaka+Road+Mathiya+Motihari" class="contact-btn location">📍 लोकेशन देखें</a>
       </div>
     </div>
@@ -1115,6 +1183,17 @@
     <a href="https://wa.me/919999999999?text=नमस्ते%20मुझे%20अपॉइंटमेंट%20बुक%20करना%20है" class="fab whatsapp" title="WhatsApp">💬</a>
   </div>
 
+<div id="mini-bot">
+  <div id="bot-title">Need Help?</div>
+ <span id="bot-close" onclick="closeBot()">✕</span>
+  <div id="bot-content">
+    <button onclick="showAnswer('appointment')">Book Appointment</button>
+    <button onclick="showAnswer('timing')">Clinic Timings</button>
+    <button onclick="showAnswer('location')">Location</button>
+    <button onclick="showAnswer('contact')">Contact Doctor</button>
+  </div>
+</div>
+
 
 
   <script>
@@ -1162,6 +1241,44 @@ function enableSound() {
     document.getElementById("floating-video").style.display = "none";
   };
 </script>
+
+<script>
+function showAnswer(type) {
+  let answer = "";
+
+  if (type === "appointment") {
+    answer = "अपॉइंटमेंट बुक करने के लिए नीचे दिए गए WhatsApp या Book Appointment बटन का उपयोग करें।";
+  }
+
+  if (type === "timing") {
+    answer = "क्लिनिक समय: सुबह 9 बजे से शाम 6 बजे तक।";
+  }
+
+  if (type === "location") {
+    answer = "क्लिनिक का पता: मेन रोड, शहर। Google Maps पर उपलब्ध।";
+  }
+
+  if (type === "contact") {
+    answer = "डॉक्टर से संपर्क के लिए Call या WhatsApp बटन पर क्लिक करें।";
+  }
+
+  const content = document.getElementById("bot-content");
+  content.innerHTML = `<div style="font-size:13px; line-height:1.5;">${answer}</div>`;
+}
+</script>
+
+<script>
+function closeBot() {
+  document.getElementById("mini-bot").style.display = "none";
+}
+</script>
+
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSd-cs72nrWGW7ewtZDSXw-ek0vkFKxJULZQW1evBpRuatzHJg/viewform"
+   target="_blank"
+   class="sticky-appointment-btn">
+   Book Appointment
+</a>
 
 
 
