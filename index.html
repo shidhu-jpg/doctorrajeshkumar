@@ -1183,16 +1183,7 @@
     <a href="https://wa.me/919999999999?text=नमस्ते%20मुझे%20अपॉइंटमेंट%20बुक%20करना%20है" class="fab whatsapp" title="WhatsApp">💬</a>
   </div>
 
-<div id="mini-bot">
-  <div id="bot-title">Need Help?</div>
- <span id="bot-close" onclick="closeBot()">✕</span>
-  <div id="bot-content">
-    <button onclick="showAnswer('appointment')">Book Appointment</button>
-    <button onclick="showAnswer('timing')">Clinic Timings</button>
-    <button onclick="showAnswer('location')">Location</button>
-    <button onclick="showAnswer('contact')">Contact Doctor</button>
-  </div>
-</div>
+ 
 
 
 
@@ -1243,24 +1234,7 @@ function enableSound() {
 </script>
 
 <script>
-function showAnswer(type) {
-  let answer = "";
-
-  if (type === "appointment") {
-    answer = "अपॉइंटमेंट बुक करने के लिए नीचे दिए गए WhatsApp या Book Appointment बटन का उपयोग करें।";
-  }
-
-  if (type === "timing") {
-    answer = "क्लिनिक समय: सुबह 9 बजे से शाम 6 बजे तक।";
-  }
-
-  if (type === "location") {
-    answer = "क्लिनिक का पता: मेन रोड, शहर। Google Maps पर उपलब्ध।";
-  }
-
-  if (type === "contact") {
-    answer = "डॉक्टर से संपर्क के लिए Call या WhatsApp बटन पर क्लिक करें।";
-  }
+ 
 
   const content = document.getElementById("bot-content");
   content.innerHTML = `<div style="font-size:13px; line-height:1.5;">${answer}</div>`;
